@@ -28,11 +28,12 @@ start_time = time.time()
 # Process 5 updates
 total_temp = 0
 
-for update_nbr in range(45000):
+for update_nbr in range(1):
     string = socket.recv_string()
-    zipcode, temperature, relhumidity = string.split()
+    zipcode, timestamp = string.split()
     #print(zipcode)
-    total_temp += int(temperature)
+    elapsed_time = time.time() - float(timestamp)
+    print(elapsed_time)
 
 elapsed_time = time.time() - start_time
 print(elapsed_time)
