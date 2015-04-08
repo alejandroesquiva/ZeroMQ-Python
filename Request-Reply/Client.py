@@ -13,13 +13,14 @@ context = zmq.Context()
 print("Connecting to hello world server…")
 socket = context.socket(zmq.REQ)
 socket.connect("tcp://localhost:5555")
+#socket.connect("tcp://157.190.54.123:5555")
 
 start_time = time.time()
 
 #  Do 10 requests, waiting each time for a response
-for request in range(10000):
+for request in range(1000):
     #print("Sending request %s …" % request)
-    socket.send(b"Hkhaslkfjhaklsjfhalksjhfalkjsfhalksjfhalksjfhlasfkjasdflkjasghdlfkjgasdlkfjgalksjdgflaksjdgflkasdgflkasdgflkajsdgflakjsdf")
+    socket.send(b"f")
 
     #  Get the reply.
     message = socket.recv()
